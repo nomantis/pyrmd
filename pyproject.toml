@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "version_helper"
+backend-path = ["_build"]
+
+[project]
+name = "pyrmd"
+authors = [
+    {name = "Barnabas Seres", email = "nomantis@nomantis.dev"},
+]
+description = "A Python library for creating markdown documents programmatically."
+readme = "README.md"
+requires-python = ">=3.9.15"
+classifiers = [
+    "Programming Language :: Python :: 3"
+]
+dependencies = []
+dynamic = ["version"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "version_helper.VERSION"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
